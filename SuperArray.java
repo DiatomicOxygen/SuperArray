@@ -29,4 +29,12 @@ public class SuperArray {
     data[index] = element;
     return data[index];
   }
+
+  private void resize() {
+    String[] tempData = data;
+    data = new String[size+10];
+    for (int i = 0; i < tempData.length; i++) {
+      data[i] = tempData[i];
+    }
+  }
 }
