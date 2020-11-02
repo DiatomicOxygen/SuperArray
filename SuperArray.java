@@ -13,12 +13,13 @@ public class SuperArray {
   }
 
   public boolean add(String element) {
-    if (size < data.length) {
-      data[size] = element;
-      size ++;
-      return true;
+    if (! (size < data.length)) {
+      resize();
     }
-    return false;
+    data[size] = element;
+    size++;
+    return true;
+
   }
 
   public String get(int index) {
@@ -37,4 +38,5 @@ public class SuperArray {
       data[i] = tempData[i];
     }
   }
+
 }
