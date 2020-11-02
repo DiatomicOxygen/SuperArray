@@ -4,7 +4,7 @@ public class SuperArray {
   private int size;
 
   public SuperArray(){
-    data = new String[3];
+    data = new String[10];
     size = 0;
   }
 
@@ -21,4 +21,7 @@ public class SuperArray {
     return false;
   }
 
+  public String get(int index) {
+    return data[index];
+  }
 }
