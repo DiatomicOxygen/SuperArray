@@ -53,7 +53,7 @@ public class SuperArray {
     }
   }
 
-  //Classwork 11/4/20
+  //Classwork and Homework 11/4/20
   public boolean isEmpty() {
     return size == 0;
   }
