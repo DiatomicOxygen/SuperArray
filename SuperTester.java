@@ -40,5 +40,23 @@ public class SuperTester {
     //test for modified d (length of data was set to 3 again)
     System.out.println(A1.add("bananan"));
     System.out.println(A1.size());
+
+    System.out.println(A1.isEmpty());
+    System.out.println(A2.isEmpty());
+
+    //A1.clear();
+    //System.out.println(A1.isEmpty());
+
+    System.out.println(A1);
+    System.out.println(A2);
+
+    System.out.println(A1.contains("1839"));
+    System.out.println(A1.contains("banana"));
+    System.out.println(A1.contains("bananan"));
+
+    SuperArray A3 = new SuperArray(2);
+    System.out.println(A1.add("bananan"));
+    System.out.println(A1.add("bananan"));
+    System.out.println(A1.add("bananan"));
   }
 }
