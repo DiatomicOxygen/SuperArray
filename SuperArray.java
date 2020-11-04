@@ -10,6 +10,12 @@ public class SuperArray {
     size = 0;
   }
 
+  //Assignment 15 constructor
+  public SuperArray(int initialCapacity) {
+    data = new String[initialCapacity];
+    size = 0;
+  }
+
   // size method (c)
   public int size() {
     return size;
@@ -41,7 +47,7 @@ public class SuperArray {
   //resize method (g)
   private void resize() {
     String[] tempData = data;
-    data = new String[size+10];
+    data = new String[size*2];
     for (int i = 0; i < tempData.length; i++) {
       data[i] = tempData[i];
     }
@@ -76,5 +82,16 @@ public class SuperArray {
       }
     }
     return false;
+  }
+
+  public void add(int index, String element) {
+    if (size == data.length) {
+      resize();
+    }
+    for (int i = size; i > index; i--) {
+      data[i+1] = data[i];
+    }
+    data[index] = element;
+    size++;
   }
 }
