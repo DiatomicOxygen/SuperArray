@@ -46,4 +46,9 @@ public class SuperArray {
     }
   }
 
+  public boolean isEmpty() {
+    return size == 0;
+  }
+
+
 }
