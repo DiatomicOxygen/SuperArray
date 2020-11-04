@@ -54,4 +54,16 @@ public class SuperArray {
     size = 0;
     data = new String[10];
   }
+
+  public String toString() {
+    String ans = "[";
+    for (int i = 0; i < size; i++) {
+      ans += data[i];
+      if (i != size - 1) {
+        ans += ", ";
+      }
+    }
+    ans += "]";
+    return ans;
+  }
 }
