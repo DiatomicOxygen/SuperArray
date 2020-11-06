@@ -85,7 +85,7 @@ public class SuperArray {
   }
 
   public void add(int index, String element) {
-    if (size == data.length) {
+    if (size + 1 >= data.length) {
       resize();
     }
     for (int i = size; i > index; i--) {
@@ -96,12 +96,19 @@ public class SuperArray {
   }
 
   public String remove(int index) {
-    String removed = data[index];
-    for (int i = index; i < size; i++ ) {
-      data[i] = data[i+1];
+    if ( ! (index >= size || index < 0)) {
+      String removed = data[index];
+      for (int i = index; i < size ; i++ ) {
+        if (i == size - 1) {
+          data[i] = null;
+        } else {
+          data[i] = data[i+1];
+        }
+      }
+      size--;
+      return removed;
     }
-    size--;
-    return removed;
+    return null;
   }
 
   public int indexOf(String s) {
