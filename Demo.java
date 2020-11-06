@@ -17,6 +17,18 @@ public class Demo {
     SuperArray comparison = findOverlap(words, words2);
     System.out.println(comparison);
     System.out.println(words);
+
+    System.out.println(words);
+    System.out.println(words2);
+    System.out.println(comparison);
+    SuperArray W1 = zip(words, words2);
+    System.out.println(W1);
+    SuperArray W2 = zip(words, comparison);
+    System.out.println(W2);
+
+    SuperArray empty = new SuperArray();
+    SuperArray W3 = zip(empty, empty);
+    System.out.println(W3);
   }
 
   public static void removeDuplicates(SuperArray s){
@@ -39,6 +51,19 @@ public class Demo {
       }
     }
     return A;
-  }  
+  }
 
+  public static SuperArray zip(SuperArray a, SuperArray b){
+    int largestSize = Math.max(a.size(), b.size());
+    SuperArray ans = new SuperArray();
+    for (int i = 0; i < largestSize; i ++) {
+      if (i < a.size()) {
+        ans.add(a.get(i));
+      }
+      if (i < b.size()) {
+        ans.add(b.get(i));
+      }
+    }
+    return ans;
+  }
 }
