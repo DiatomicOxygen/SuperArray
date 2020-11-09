@@ -31,6 +31,8 @@ public class Demo {
     System.out.println(W3);
   }
 
+  //Assignment 16
+  //method for part a
   public static void removeDuplicates(SuperArray s){
     for (int i = s.size(); i >= 0; i--) {
       if (i != s.indexOf(s.get(i))) {
@@ -39,6 +41,7 @@ public class Demo {
     }
   }
 
+  //method for part b
   public static SuperArray findOverlap(SuperArray a, SuperArray b) {
     SuperArray A = new SuperArray();
     for (int i = 0; i < a.size(); i++) {
@@ -53,6 +56,7 @@ public class Demo {
     return A;
   }
 
+  // method for part e
   public static SuperArray zip(SuperArray a, SuperArray b){
     int largestSize = Math.max(a.size(), b.size());
     SuperArray ans = new SuperArray();
