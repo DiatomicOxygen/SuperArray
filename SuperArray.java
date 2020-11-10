@@ -12,6 +12,10 @@ public class SuperArray {
 
   //Assignment 15 constructor
   public SuperArray(int initialCapacity) {
+    if (initialCapacity < 0) {
+      throw new IllegalArgumentException("Please set a positive initial capacity!");
+    }
+    
     data = new String[initialCapacity];
     size = 0;
   }
@@ -47,7 +51,7 @@ public class SuperArray {
   //resize method (g)
   private void resize() {
     String[] tempData = data;
-    data = new String[size*2];
+    data = new String[size*2 + 1];
     for (int i = 0; i < tempData.length; i++) {
       data[i] = tempData[i];
     }
@@ -96,19 +100,16 @@ public class SuperArray {
   }
 
   public String remove(int index) {
-    if ( ! (index >= size || index < 0)) {
-      String removed = data[index];
-      for (int i = index; i < size ; i++ ) {
-        if (i == size - 1) {
-          data[i] = null;
-        } else {
-          data[i] = data[i+1];
-        }
+    String removed = data[index];
+    for (int i = index; i < size ; i++ ) {
+      if (i == size - 1) {
+        data[i] = null;
+      } else {
+        data[i] = data[i+1];
       }
-      size--;
-      return removed;
     }
-    return null;
+    size--;
+    return removed;
   }
 
   public int indexOf(String s) {
