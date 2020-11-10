@@ -95,6 +95,10 @@ public class SuperTester {
     System.out.println(getTester(A4, 6));
     System.out.println(getTester(A4, 1));
 
+    System.out.println(setTester(A4, -1, "asdf"));
+    System.out.println(setTester(A4, 6, "asdf"));
+    System.out.println(setTester(A4, 1, "asdf"));
+
   }
 
   public static boolean constructorTester(int initialCapacity) {
@@ -114,5 +118,14 @@ public class SuperTester {
        return false;
      }
    }
+
+  public static boolean setTester(SuperArray Super, int index, String element) {
+    try {
+      Super.set(index, element);
+      return true;
+    } catch (IndexOutOfBoundsException e) {
+      return false;
+    }
+  }
 
 }
