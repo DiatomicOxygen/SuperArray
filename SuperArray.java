@@ -109,6 +109,13 @@ public class SuperArray {
   }
 
   public void add(int index, String element) {
+    if (index < 0) {
+      throw new IndexOutOfBoundsException("Please use a positive index!");
+    }
+    if (index > size) {
+      throw new IndexOutOfBoundsException("Please use an index less than or equal to " + size + "!");
+    }
+
     if (size + 1 >= data.length) {
       resize();
     }
