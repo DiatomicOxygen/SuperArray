@@ -53,6 +53,16 @@ public class SuperArray {
 
   //set method (f)
   public String set(int index, String element) {
+    if (index < 0) {
+      throw new IndexOutOfBoundsException("Please use a positive index!");
+    }
+    if (index >= size) {
+      if (size == 0) {
+        throw new  IndexOutOfBoundsException("This is an empty SuperArray!");
+      }
+      throw new IndexOutOfBoundsException("Please use an index less than " + size + "!");
+    }
+
     String old = data[index];
     data[index] = element;
     return old;
