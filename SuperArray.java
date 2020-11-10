@@ -15,7 +15,7 @@ public class SuperArray {
     if (initialCapacity < 0) {
       throw new IllegalArgumentException("Please set a positive initial capacity!");
     }
-    
+
     data = new String[initialCapacity];
     size = 0;
   }
@@ -38,6 +38,16 @@ public class SuperArray {
 
   //get method (e)
   public String get(int index) {
+    if (index < 0) {
+      throw new IndexOutOfBoundsException("Please use a positive index!");
+    }
+    if (index >= size) {
+      if (size == 0) {
+        throw new  IndexOutOfBoundsException("This is an empty SuperArray!");
+      }
+      throw new IndexOutOfBoundsException("Please use an index less than " + size + "!");
+    }
+
     return data[index];
   }
 
