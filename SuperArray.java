@@ -127,6 +127,16 @@ public class SuperArray {
   }
 
   public String remove(int index) {
+    if (index < 0) {
+      throw new IndexOutOfBoundsException("Please use a positive index!");
+    }
+    if (index >= size) {
+      if (size == 0) {
+        throw new  IndexOutOfBoundsException("This is an empty SuperArray!");
+      }
+      throw new IndexOutOfBoundsException("Please use an index less than " + size + "!");
+    }
+    
     String removed = data[index];
     for (int i = index; i < size ; i++ ) {
       if (i == size - 1) {
