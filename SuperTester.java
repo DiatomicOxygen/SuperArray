@@ -55,8 +55,51 @@ public class SuperTester {
     System.out.println(A1.contains("bananan"));
 
     SuperArray A3 = new SuperArray(2);
-    System.out.println(A1.add("bananan"));
-    System.out.println(A1.add("bananan"));
-    System.out.println(A1.add("bananan"));
+    System.out.println(A3.add("bananan"));
+    System.out.println(A3.add("bananan"));
+    System.out.println(A3.add("bananan"));
+
+    System.out.println(A1);
+    A1.add(4, "ADDED");
+    System.out.println(A1);
+
+    //System.out.println(A1.remove(5));
+    System.out.println(A1);
+
+    System.out.println(A1.indexOf("bananan"));
+    System.out.println(A1.indexOf("ban"));
+    System.out.println(A1.lastIndexOf("bananan"));
+
+    String[] a = A1.toArray();
+    a[0] = "BAnaNA";
+    System.out.println(A1);
+
+    SuperArray A4 = new SuperArray(2);
+    System.out.println(A4.add("bananan"));
+    System.out.println(A4.add("bananan"));
+    System.out.println(A4.add("bananan"));
+
+    System.out.println(A1.equals(A3));
+    System.out.println(A1.equals(A2));
+    System.out.println(A3.equals(A4));
+
+    SuperArray A6 = new SuperArray(2);
+    SuperArray A5 = new SuperArray(2);
+    System.out.println(A5.equals(A6));
+
+    System.out.println(constructorTester(0));
+    System.out.println(constructorTester(10));
+    System.out.println(constructorTester(-100));
+
   }
+
+  public static boolean constructorTester(int initialCapacity) {
+    try {
+      SuperArray E1 = new SuperArray(initialCapacity);
+      return true;
+    } catch (IllegalArgumentException e) {
+      return false;
+    }
+  }
+
 }
