@@ -88,28 +88,34 @@ public class SuperTester {
     SuperArray A5 = new SuperArray(2);
     //System.out.println(A5.equals(A6));
 
+    //constructorTester Tests
     System.out.println(constructorTester(0));
     System.out.println(constructorTester(10));
     System.out.println(constructorTester(-100));
 
+    //getTester tests
     System.out.println(getTester(A4, -1));
     System.out.println(getTester(A4, 6));
     System.out.println(getTester(A4, 1));
 
+    //setTester Tests
     System.out.println(setTester(A4, -1, "asdf"));
     System.out.println(setTester(A4, 6, "asdf"));
     System.out.println(setTester(A4, 1, "asdf"));
 
+    //addTester tests
     System.out.println(addTester(A4, -1, "asdf"));
     System.out.println(addTester(A4, 6, "asdf"));
     System.out.println(addTester(A4, 1, "asdf"));
 
+    //removeTester tests
     System.out.println(removeTester(A4, -1));
     System.out.println(removeTester(A4, 6));
     System.out.println(removeTester(A4, 1));
-    
+
   }
 
+  //tester for constructor IllegalArgumentException
   public static boolean constructorTester(int initialCapacity) {
     try {
       SuperArray E1 = new SuperArray(initialCapacity);
@@ -119,6 +125,7 @@ public class SuperTester {
     }
   }
 
+  //tester for get method IndexOutOfBoundsException
   public static boolean getTester(SuperArray Super, int index) {
      try {
        Super.get(index);
@@ -128,6 +135,7 @@ public class SuperTester {
      }
    }
 
+  //tester for set method IndexOutOfBoundsException
   public static boolean setTester(SuperArray Super, int index, String element) {
     try {
       Super.set(index, element);
@@ -137,6 +145,7 @@ public class SuperTester {
     }
   }
 
+  //tester for add method IndexOutOfBoundsException
   public static boolean addTester(SuperArray Super, int index, String element) {
     try {
       Super.add(index, element);
@@ -146,6 +155,7 @@ public class SuperTester {
     }
   }
 
+  //tester for remove method IndexOutOfBoundsException 
   public static boolean removeTester(SuperArray Super, int index) {
     try {
       Super.remove(index);

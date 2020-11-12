@@ -136,7 +136,7 @@ public class SuperArray {
       }
       throw new IndexOutOfBoundsException("Please use an index less than " + size + "!");
     }
-    
+
     String removed = data[index];
     for (int i = index; i < size ; i++ ) {
       if (i == size - 1) {
@@ -189,6 +189,6 @@ public class SuperArray {
     }
     return true;
   }
-
+  //Assignment 17: edits are spread throughout the methods
 
 }
